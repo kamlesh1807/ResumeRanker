@@ -11,7 +11,7 @@
 # Clone the Resume Ranker Repository
 ```git clone https://github.com/kamlesh1807/ResumeRanker.git```
 # Build the Docker image
-``` cd ResumeRanker ```
+``` cd ResumeRanker ```<br>
 ```sudo docker build -t resumeranker:1.0 .```
 
 # Start the Resume Ranker Container
