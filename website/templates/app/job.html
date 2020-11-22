@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Dashboard
+{% endblock %}
+{% block head %}
+<meta http-equiv="refresh" content="20"/>
+
+{% endblock %}
+{% block content %}
+
+	{% if messages %}
+
+	    {% for message in messages %}
+
+		<!--Panel-->
+		<div class="card border-success mb-3">
+		    <div class="card-header text-danger">
+		        <p class="card-title">{{ message }}</p>
+		    </div>
+		</div>
+		<!--/.Panel-->
+	    
+	    {% endfor %}
+
+	{% endif %}
+	
+<h1> {{ job.title }} </h1>
+<form method="post" enctype="multipart/form-data" action="/job/{{ job.id }}"> 
+	{% csrf_token %}
+	<input type="file" id="files" name="files" multiple/>
+	<input type="submit" value="Upload" />
+
+	</form>
+
+	{% if resumes|length == 0 %}
+	
+	<h1> No Data Found </h1>
+	
+	{% else %}
+
+	<h4><span style="color: rgb(2, 11, 19);"> Created jobs :</span></h4>
+
+    <div class="btn pull-right">
+    <form action="{% url 'jobs:scoring' job.id  %}" method="POST">
+		{% csrf_token %}
+	  <input type="submit" id="scoringButton" name="scoringButton" value="Score" />
+	</form>
+	</div>
+
+
+	<table class="table table-striped" id="job">
+  <thead>
+    <tr style="background-color:rgb(206, 177, 207);">
+      <th scope="col">Email</th>
+      <th scope="col">Matched Skills</th>
+	  <th scope="col">Score</th>
+	  <th scope="col">Status</th>
+	  <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for resume in resumes %}
+    <tr>
+		<td>{{ resume.email}}</td>
+      <td>{{ resume.skills }}</td>
+	  <td>{{ resume.score }}</td>
+	  <td>
+		  <select class="browser-default custom-select">
+			  <option selected>{{ resume.status }}</option>
+			  {% if resume.status == "Not Shared" %}
+			  <option id="Shared" value="Shared">Shared</option>
+			  <option id="Rejected" value="Rejected">Rejected</option>
+			  {% elif resume.status == "Shared" %}
+			  <option id="Not Shared" value="Not Shared">Not Shared</option>
+			  <option id="Rejected" value="Rejected">Rejected</option>
+			  {% else %}
+			  <option id="Not Shared" value="Not Shared">Not Shared</option>
+			  <option id="Shared" value="Shared">Shared</option>
+			  {% endif %}
+
+		  </select>
+	  </td>
+
+	  <td>
+		<form action="{% url 'jobs:resumeDelete' job.id resume.id %}" method="POST">
+		{% csrf_token %}
+		<button type="submit">Delete</button>
+		</form>
+	   </td>
+    </tr>
+  {% endfor %}
+    
+  </tbody>
+</table>
+<script>
+	$(document).ready(function() {
+	  $('#job').DataTable();
+	} );
+
+	$.ajax({
+   data: {},
+   url: '/job/scoring/{{ job.id }}/status',
+   type: 'get',
+   success: function (data) {
+   if (data.status == false)
+      $("#scoringButton").show();
+   else
+      $("#scoringButton").hide();
+   }
+   })
+</script>
+
+{% endif %}
+{% endblock content %}
