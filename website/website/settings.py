@@ -151,7 +151,7 @@ EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL = 'Resumeranker@gmail.com'
 
 
-REDIS_HOST = '172.31.28.222'
+REDIS_HOST = '192.168.11.87'
 REDIS_PORT = '6379'
 BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
