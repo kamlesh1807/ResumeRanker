@@ -22,7 +22,7 @@
         &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;Select The BEST from best"</b> 
     </p>
         <div class="d-lg-flex">
-          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          <a href="{% url 'jobs:jobs' %}" class="btn-get-started scrollto">Get Started</a>
          
         </div>
       </div>
@@ -53,7 +53,7 @@
         <div class="section-title">
           <h2> Features</h2>
           <p>Your time is priceless  And Therefore here
-            we score the resume on the basis of  job description provided by you and show 
+            we filter the resume on the basis of  job description provided by you and show 
             you those resume  which are more deserving . some of our features are 
           </p>
         </div>
@@ -65,23 +65,26 @@
                 <div class="col-md-6 icon-box" data-aos="fade-up">
                   <i class="bx bx-receipt"></i>
                   <h4>Resumes</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <p>A Resume is a formal document that a job applicant creates to itemize his/her qualifications for a position.
+                    
+                  </p>
                 </div>
                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                   <i class="bx bx-images"></i>
                   <h4>Job </h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                  <p>The HR creats the Jobs by providing   a job title and Descriptions  and the required skill.</p>
                 </div>
                
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
                   <i class="bx bx-id-card"></i>
                   <h4>Scoring</h4>
-                  <p>Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore</p>
+                  <p>On the basis of Job description the score is give , the most matched resume will have most score.</p>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                  <i class="bx bx-shield"></i>
-                  <h4>Security</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                  <i class="bx bx-receipt"></i>
+                  <h4>Rank</h4>
+                  <p>The filtered resume is display rank wise  on the basis of job description .
+                  </p>
                 </div>
               </div>
             </div>
@@ -104,17 +107,23 @@
           <img src="../../static/img/details/details-1.png" class="img-fluid" alt="">
         </div>
         <div class="col-md-8 pt-4" data-aos="fade-up">
-          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+          <h3>WHAT DOES IT WORK ?</h3><br>
           <p class="font-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+            
+          <li>Resume ranker Filter  the resume that are provided by HR as per the Job Descripstion required.</li><br>
+          <li>It puts those Resumes that are fesiable for the JD on the top priority.</li><br>
+          <li>HR  rechecks the resumes whether they are best for the JD or not </li><br>
+          <li>HR have three options shared , not shared or rejected.</li><br>
+          
+          
+          <p>The website save the HR time . He/she have those resume with matches most with the job description 
+             now he/she can look for the extra skill , experience and references . The HR have been provided three option 
+            Not shared as Default , Shared for the good one , rejected for the defaulter .
           </p>
-          <ul>
-            <li><i class="icofont-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="icofont-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="icofont-check"></i> Iure at voluptas aspernatur dignissimos doloribus repudiandae.</li>
-            <li><i class="icofont-check"></i> Est ipsa assumenda id facilis nesciunt placeat sed doloribus praesentium.</li>
-          </ul>
+
+        
+          </p>
+         
           <p>
            
           </p>
@@ -126,17 +135,19 @@
           <img src="../../static/img/details/details-2.png" class="img-fluid" alt="">
         </div>
         <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-          <h3>Corporis temporibus maiores provident</h3>
+          <h3>HOW IT WORKS ?</h3><br>
           <p class="font-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
-          </p>
-          <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-          </p>
           
+           
+            <li><i class="icofont-check"></i>HR creates the Jobs by providing title , Descriptions and the required skill.</li><br>
+            <li><i class="icofont-check"></i>HR collects the resumes as per the Job description requires.</li><br>
+            <li><i class="icofont-check"></i>HR uploads all the resumes for the job.</li><br>
+            <li><i class="icofont-check"></i>Our website  prioritize those resumes that are best for JD.</li><br>
+            <li><i class="icofont-check"></i>The website display the resumes Rank wise with the eamil and matched skill .</li>
+            
+
+          
+</p>
         </div>
       </div>
 
@@ -155,10 +166,9 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <h4>Contect us  </h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+            <p>You can contect us through mail and social-media .
+              Suggestions are welcome</social-med></p>
+            
           </div>
         </div>
       </div>
@@ -174,7 +184,7 @@
               GLA University <br>
               Mathura, 17km NH2<br>
               India <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Phone:</strong> +91 987 654 3210<br>
               <strong>Email:</strong> Team08@gmail.com<br>
             </p>
           </div>
@@ -200,8 +210,8 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>To contect with us , You can follow us Social Networks.</p>
+            <h4>Contact Us</h4>
+            <p>You can follow us on :</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
