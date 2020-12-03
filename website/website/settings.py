@@ -140,7 +140,15 @@ LOGOUT_REDIRECT_URL = 'users:home'
 
 
 # Email backend
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
+MAILER_EMAIL_BACKEND = EMAIL_BACKEND  
+EMAIL_HOST = 'smtp-relay.sendinblue.com'  
+EMAIL_HOST_PASSWORD = '0dUAmS58cHNFO1YI'  
+EMAIL_HOST_USER = '896282aditya@gmail.com'  
+EMAIL_PORT = 465  
+EMAIL_USE_SSL = True  
+DEFAULT_FROM_EMAIL = 'Resumeranker@gmail.com'
 
 
 REDIS_HOST = '172.31.28.222'
