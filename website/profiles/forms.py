@@ -60,7 +60,7 @@ class SignUpForm(UserCreationForm):
 		required=False,
 		widget=forms.TextInput(
 			attrs={
-				"placeholder": "ABC",
+				"placeholder": "City",
 				"class": "form-control"
 			}
 		)
