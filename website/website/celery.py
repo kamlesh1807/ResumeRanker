@@ -4,7 +4,7 @@ from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'website.settings')
-BASE_REDIS_URL = os.environ.get('REDIS_URL', 'redis://192.168.11.87:6379')
+BASE_REDIS_URL = os.environ.get('REDIS_URL', 'redis://172.25.231.42:6379')
 
 app = Celery('website')
 
