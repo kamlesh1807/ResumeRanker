@@ -19,3 +19,5 @@
 
 # Remove Redis Container
 ```sudo docker rm resume-ranker -f``` 
+      
+      THANK YOU FOR VISITING PROJECT !!!
