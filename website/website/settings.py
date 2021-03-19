@@ -140,18 +140,18 @@ LOGOUT_REDIRECT_URL = 'users:home'
 
 
 # Email backend
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
-MAILER_EMAIL_BACKEND = EMAIL_BACKEND  
-EMAIL_HOST = 'smtp-relay.sendinblue.com'  
-EMAIL_HOST_PASSWORD = '0dUAmS58cHNFO1YI'  
-EMAIL_HOST_USER = '896282aditya@gmail.com'  
-EMAIL_PORT = 465  
-EMAIL_USE_SSL = True  
-DEFAULT_FROM_EMAIL = 'Resumeranker@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
+#MAILER_EMAIL_BACKEND = EMAIL_BACKEND  
+#EMAIL_HOST = 'smtp-relay.sendinblue.com'  
+#EMAIL_HOST_PASSWORD = '0dUAmS58cHNFO1YI'  
+#EMAIL_HOST_USER = '896282aditya@gmail.com'  
+#EMAIL_PORT = 465  
+#EMAIL_USE_SSL = True  
+#DEFAULT_FROM_EMAIL = 'Resumeranker@gmail.com'
 
 
-REDIS_HOST = '172.25.226.239'
+REDIS_HOST = 'localhost'
 REDIS_PORT = '6379'
 BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
